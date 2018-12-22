@@ -5,18 +5,19 @@ import org.jointheleague.graphical.robot.Robot;
 public class House {
 	static Robot sami= new Robot();
 public static void main(String[] args) {
-	sami.setX(10);
-	for (int i = 0; i < 9; i++) {
-		drawHouse(i*10);
+	sami.penDown();
+	sami.setSpeed(20);
+	sami.setX(40);
+	for (int i = 1; i < 9; i++) {
+		drawHouse(i*10, Color.BLUE);
 	}
-	drawPointyRoof("small", Color.blue);
+	drawPointyRoof("medium", Color.blue);
+	
 	
 }
-static void drawHouse(int height) {
+static void drawHouse(int height, Color c) {
+	sami.setPenColor(c);
 	sami.setPenWidth(5);
-	sami.penDown();
-	sami.setSpeed(100);
-	sami.setRandomPenColor();
 	sami.move(height);
 	sami.turn(90);
 	sami.move(30);
@@ -40,12 +41,13 @@ int b=0;
 		b=250;
 	}
 	sami.setPenColor(c);
+	sami.setPenWidth(5);
 	sami.move(b);
 	sami.turn(45);
 	sami.move(30);
 	sami.turn(85);
 	sami.move(30);
 	sami.turn(50);
-	sami.move(50);
+	sami.move(b);
 }
 }
