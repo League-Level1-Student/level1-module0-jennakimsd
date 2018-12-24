@@ -48,10 +48,9 @@ public class PhotoQuiz {
 		quizWindow.remove(c);
 		// 10. find another image and create it (might take more than one line of code)
 		String westiepoo = "https://www.dogbreedplus.com/dog_breeds/images/westiepoo.JPG";
-		Component d;
-		d = createImage(westiepoo);
+		c = createImage(westiepoo);
 		// 11. add the second image to the quiz window
-		quizWindow.add(d);
+		quizWindow.add(c);
 		// 12. pack the quiz window
 		quizWindow.pack();
 		// 13. ask another question

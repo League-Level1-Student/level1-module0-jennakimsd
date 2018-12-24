@@ -8,8 +8,8 @@ public static void main(String[] args) {
 	sami.penDown();
 	sami.setSpeed(20);
 	sami.setX(40);
-	for (int i = 1; i < 9; i++) {
-		drawHouse(i*10, Color.BLUE);
+	for (int i = 0; i < 9; i++) {
+	drawHouse(50, Color.BLUE);
 	}
 	drawPointyRoof("medium", Color.blue);
 	
