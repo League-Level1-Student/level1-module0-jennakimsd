@@ -10,7 +10,7 @@ void draw(){
   background(#001BFF);
   fill(#00ACFF);
   stroke(#000000);
-  raindropY+=5;
+  raindropY+=10;
   ellipse(raindropX, raindropY, 10, 20);
   fill(#959595);
   stroke(#000000);
