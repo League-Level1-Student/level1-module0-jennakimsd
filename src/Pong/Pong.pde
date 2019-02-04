@@ -6,6 +6,7 @@ int X=0;
 int Y=0;
 int speedX=10; 
 int speedY=5;
+boolean hit=false;
 void setup(){
   size(600, 600);
   minim = new Minim (this);
@@ -37,13 +38,18 @@ void draw(){
  if (Y<0){
    speedY=speedY*-1;
  }
- 
-  if(intersects(X, Y, mouseX, 498, 80, 100)){
-    speedY=speedY*-1;
+  if(!hit){
+    if(intersects(X, Y, mouseX, 498, 80, 100)){
+      speedY=speedY*-1;
+      hit=true;}
+  }
+  
+  else if (!intersects(X, Y, mouseX, 498, 80, 100)){
+    hit=false;}
+  
   }
 
 
-}
 
 
   boolean intersects(int ballX, int ballY, int paddleX, int paddleY, int paddleWidth, int paddleLength) {
