@@ -14,7 +14,7 @@ void setup(){
 }
 
 void draw(){
- image(backgroundImage, 0, 0);
+  image(backgroundImage,0 ,0);
  image(backgroundImage, 0, 0, 600, 600);
  fill(#00ACFF);
  stroke(#000000);
@@ -34,18 +34,21 @@ void draw(){
    sound.trigger();
    speedY=speedY*-1;
  } 
- if(Y==(600-100)){
-   intersects(X, Y, mouseX, 498, 100);
- }
- else if (Y<0){
+ if (Y<0){
    speedY=speedY*-1;
  }
+ 
+  if(intersects(X, Y, mouseX, 498, 80, 100)){
+    speedY=speedY*-1;
+  }
+
+
 }
 
 
-  boolean intersects(int ballX, int ballY, int paddleX, int paddleY, int paddleLength) {
+  boolean intersects(int ballX, int ballY, int paddleX, int paddleY, int paddleWidth, int paddleLength) {
     
-    if (ballY > paddleY && ballX > paddleX && ballX < paddleX + paddleLength){
+    if (ballX > paddleX && ballX < paddleX + paddleWidth && ballY > paddleY && ballY < paddleY + paddleLength){
           return true;}
           
      else {
